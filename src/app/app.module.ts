@@ -13,6 +13,7 @@ import { NavComponent } from './nav/nav.component'
 
 import { AppInfoService } from './app-info.service'
 import { UserService } from'./user.service';
+import { MovieApiService } from './movie-api.service'
 import { LoginComponent } from './login/login.component'
 
 
@@ -32,7 +33,7 @@ import { LoginComponent } from './login/login.component'
     FormsModule,
     HttpClientModule
   ],
-  providers: [AppInfoService, UserService],
+  providers: [AppInfoService, UserService, MovieApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
