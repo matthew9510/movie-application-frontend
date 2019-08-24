@@ -11,13 +11,41 @@ export interface RegisterResponse{
   username: string
 }
 
+export interface LoginResponse{
+  id: string,
+  token: string,
+  userId: string
+}
+
+
+export interface userCredentials{
+  email: string,
+  firstName: string,
+  id: string,
+  lastName: string,
+  username: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   constructor(public _http: HttpClient) { }
 
-  makeNewAccount(userInfo){
-    return this._http.post('http://localhost:3000/api/appUsers/', userInfo);
+  baseUrl: string = "http://localhost:3000/api/";
+  appUserUrl: string = "appUsers/"
+  loginUrl: string = "appUsers/login"
+
+  makeNewAccount(credentials){
+    return this._http.post(`${this.baseUrl}${this.appUserUrl}`, credentials);
+  }
+
+  login(credentials){
+    return this._http.post(`${this.baseUrl}${this.loginUrl}`, credentials);
+
+  }
+
+  getUserCred(userId: string){
+    return this._http.get(`${this.baseUrl}${this.appUserUrl}${userId}`);
   }
 }

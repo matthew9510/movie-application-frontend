@@ -12,7 +12,8 @@ import { RegisterComponent } from './register/register.component';
 import { NavComponent } from './nav/nav.component'
 
 import { AppInfoService } from './app-info.service'
-import { UserService } from'./user.service'
+import { UserService } from'./user.service';
+import { LoginComponent } from './login/login.component'
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { UserService } from'./user.service'
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    NavComponent
+    NavComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
