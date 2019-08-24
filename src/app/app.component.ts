@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppInfoService } from './app-info.service'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'movie-app';
+  constructor(public _appInfoService: AppInfoService){}
 }
