@@ -14,16 +14,20 @@ import { NavComponent } from './nav/nav.component'
 import { AppInfoService } from './app-info.service'
 import { UserService } from'./user.service';
 import { MovieApiService } from './movie-api.service'
-import { LoginComponent } from './login/login.component'
-
-
+import { LoginComponent } from './login/login.component';
+import { CarouselComponent } from './carousel/carousel.component'
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { MoviesContainerComponent } from './movies-container/movies-container.component';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegisterComponent,
     NavComponent,
-    LoginComponent
+    LoginComponent,
+    CarouselComponent,
+    MoviesContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,9 @@ import { LoginComponent } from './login/login.component'
     ClarityModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SlickCarouselModule,
+    MatCardModule
   ],
   providers: [AppInfoService, UserService, MovieApiService],
   bootstrap: [AppComponent]

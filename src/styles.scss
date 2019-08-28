@@ -15,15 +15,35 @@ html {
 
 body {
   height: 100%;
-  // background-color: pink;
 }
 
-app-nav {
-  height: 5%;
-  // flex: 0 0 40%;
-}
 
 app-register{
   height:95%;
+}
+
+app-login{
+  height:95%;
   // flex: 0 0 60%;
 }
+
+app-home{
+  height: 94%;
+}
+
+app-carousel{
+  height: 94%
+}
+
+
+.slick-prev,
+.slick-next {
+    top: 40% !important;
+    // background-color: red !important;
+    // color:blue !important;
+    &:before {
+      color: rgb(0, 37, 56, .9) !important;
+    }
+}
+/* Material theme */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";

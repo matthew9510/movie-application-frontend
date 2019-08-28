@@ -17,7 +17,6 @@ export interface LoginResponse{
   userId: string
 }
 
-
 export interface userCredentials{
   email: string,
   firstName: string,
@@ -36,6 +35,7 @@ export class UserService {
   appUserUrl: string = "appUsers/"
   loginUrl: string = "appUsers/login"
 
+
   makeNewAccount(credentials){
     return this._http.post(`${this.baseUrl}${this.appUserUrl}`, credentials);
   }
@@ -48,4 +48,5 @@ export class UserService {
   getUserCred(userId: string){
     return this._http.get(`${this.baseUrl}${this.appUserUrl}${userId}`);
   }
+
 }
