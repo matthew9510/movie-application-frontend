@@ -15,8 +15,6 @@ import { AppInfoService } from './app-info.service'
 import { UserService } from'./user.service';
 import { MovieApiService } from './movie-api.service'
 import { LoginComponent } from './login/login.component';
-import { CarouselComponent } from './carousel/carousel.component'
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { MoviesContainerComponent } from './movies-container/movies-container.component';
 import { MatCardModule } from '@angular/material/card';
 @NgModule({
@@ -26,7 +24,6 @@ import { MatCardModule } from '@angular/material/card';
     RegisterComponent,
     NavComponent,
     LoginComponent,
-    CarouselComponent,
     MoviesContainerComponent
   ],
   imports: [
@@ -36,7 +33,6 @@ import { MatCardModule } from '@angular/material/card';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    SlickCarouselModule,
     MatCardModule
   ],
   providers: [AppInfoService, UserService, MovieApiService],
