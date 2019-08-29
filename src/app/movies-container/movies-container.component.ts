@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MovieApiService, Response, ResponseResults } from '../movie-api.service'
+import { MovieApiService, MovieList, Movie } from '../movie-api.service'
 import { MovieService } from '../movie.service'
 
 @Component({
@@ -20,20 +20,18 @@ export class MoviesContainerComponent implements OnInit {
 
   populateMovies(){
     this._movieApiService.getMovies(this.moviesCategory)
-    .subscribe((res: Response) => {
+    .subscribe((res: MovieList) => {
         this.movies = res.results;
     })
   }
 
-  getMoviePath(poster_path: string){
-    return this._movieApiService.imageBaseUrl 
-            + this._movieApiService.posterSizes[4] 
-            + poster_path;
+  getMovieImagePath(poster_path: string){
+    return this._movieApiService.getMovieImagePath(poster_path)
   }
 
-  addToFavorites(movieTitle: string){
-    this._movieService.addToFavorites(movieTitle).subscribe((res: any) => {
-      console.log(res);
+  addToFavorites(movie: Movie){
+    this._movieService.addToFavorites(movie).subscribe((res: any) => {
+      // todo - populate local favorites
     })
   }
 

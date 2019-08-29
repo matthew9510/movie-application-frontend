@@ -37,7 +37,7 @@ export class UserService {
 
 
   makeNewAccount(credentials){
-    return this._http.post(`${this.baseUrl}${this.appUserUrl}`, credentials);
+    return this._http.post(`${this.baseUrl}${this.appUserUrl}`, credentials, );
   }
 
   login(credentials){

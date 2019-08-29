@@ -1,0 +1,43 @@
+.movies-row{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    flex-wrap: wrap;
+}
+
+.movie-card{
+    width: 20%;
+    padding-top: 20px;
+}
+
+mat-card{
+    border-radius: 15px;
+    box-shadow: -3px 3px 6px 1px   rgba(70, 142, 179, 0.7) !important;
+    margin: 0px 10px;
+    padding-bottom: 0px;
+ 
+}
+
+mat-card-title{
+    min-height: 50px;
+}
+
+h4{
+    text-align: center;
+}
+
+mat-card-actions{
+    text-align: center;
+}
+
+
+img{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+h3{
+    font-size: 20px;
+    text-align: center;
+}

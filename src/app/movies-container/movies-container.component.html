@@ -6,10 +6,10 @@
       </mat-card-title>
 
       <mat-card-actions> 
-        <button (click)="addToFavorites(movie.title)"class="btn btn-primary"><clr-icon shape="star"></clr-icon> Favorite</button>
+        <button (click)="addToFavorites(movie)"class="btn btn-primary"><clr-icon shape="star"></clr-icon> Favorite</button>
       </mat-card-actions>
      
-      <img mat-card-image src="{{getMoviePath(movie.poster_path)}}">
+      <img mat-card-image src="{{getMovieImagePath(movie.poster_path)}}">
       
     </mat-card>
   </div>
