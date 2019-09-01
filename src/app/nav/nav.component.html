@@ -11,8 +11,8 @@
     <a routerLink='favorites'  [routerLinkActive]="'active'" class="nav-link nav-text">Favorites</a>
   </div>
   <div class="header-actions">
-    <a href="javascript://" class="nav-link nav-icon">
-      <clr-icon shape="cog"></clr-icon>
+    <a routerLink='login' (click)="logout()" class="nav-link nav-icon logout">
+      <clr-icon shape="logout">Logout</clr-icon>
     </a>
   </div>
 </header>

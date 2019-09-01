@@ -18,6 +18,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { AppInfoService } from './app-info.service'
 import { UserService } from'./user.service';
 import { MovieService } from './movie.service' 
+import { LoggedInAuthGuard } from './logged-in-auth.guard'
+import { NotLoggedInAuthGuard } from './not-logged-in-auth.guard'
 
 import { MovieApiService } from './movie-api.service'
 
@@ -40,7 +42,7 @@ import { MovieApiService } from './movie-api.service'
     HttpClientModule,
     MatCardModule
   ],
-  providers: [AppInfoService, UserService, MovieService, MovieApiService],
+  providers: [AppInfoService, UserService, MovieService, LoggedInAuthGuard , NotLoggedInAuthGuard, MovieApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

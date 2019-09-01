@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { UserService } from "../user.service";
 import {
   MovieApiService,
   MovieList,
@@ -16,8 +17,9 @@ export class FavoritesComponent implements OnInit {
   favorites: any;
 
   constructor(
+    public _userService: UserService,
+    public _movieService: MovieService,
     public _movieApiService: MovieApiService,
-    public _movieService: MovieService
   ) {}
 
   ngOnInit() {

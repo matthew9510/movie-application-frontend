@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient }  from '@angular/common/http';
+import { HttpClient, HttpHeaders  }  from '@angular/common/http';
+
 
 export interface RegisterResponse{
   email: string,
@@ -34,10 +35,11 @@ export class UserService {
   baseUrl: string = "http://localhost:3000/api/";
   appUserUrl: string = "appUsers/"
   loginUrl: string = "appUsers/login"
-
+  logoutUrl: string = "appUsers/logout"
+  isLoggedIn: boolean = false;
 
   makeNewAccount(credentials){
-    return this._http.post(`${this.baseUrl}${this.appUserUrl}`, credentials, );
+    return this._http.post(`${this.baseUrl}${this.appUserUrl}`, credentials);
   }
 
   login(credentials){
@@ -45,8 +47,17 @@ export class UserService {
 
   }
 
+  logout(){
+    return this._http.post(`${this.baseUrl}${this.logoutUrl}`, sessionStorage.getItem('token'), {headers: this.createHeader()})
+  }
+
   getUserCred(userId: string){
-    return this._http.get(`${this.baseUrl}${this.appUserUrl}${userId}`);
+    
+    return this._http.get(`${this.baseUrl}${this.appUserUrl}${userId}`, {headers: this.createHeader()});
+  }
+
+  createHeader(){
+    return new HttpHeaders().set('Authorization', sessionStorage.getItem('token'))
   }
 
 }

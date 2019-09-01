@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('token', res.token);
       sessionStorage.setItem('userId', res.userId);
       sessionStorage.setItem('loginResponseId', res.id);
+      this._userService.isLoggedIn = true;
       this.populateSessionStorage();
       this.goToDash();
     })

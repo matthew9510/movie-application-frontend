@@ -20,7 +20,9 @@ interface Form {
 export class RegisterComponent implements OnInit {
   constructor(public _appInfoService: AppInfoService, public _userService: UserService, public router: Router) {}
   
-  ngOnInit() {}
+  ngOnInit() {
+        // if logged in 
+  }
 
   form: Form = {
     firstName: null,
@@ -46,9 +48,8 @@ export class RegisterComponent implements OnInit {
       sessionStorage.setItem('email', res.email);
       sessionStorage.setItem('firstName', res.firstName);
       sessionStorage.setItem('lastName', res.lastName);
+      this._userService.isLoggedIn = true;
       this.goToDash();
-      console.log(res);
-      console.log("sessionStorage", sessionStorage)
     })
   }
 
